@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: shantkhayalian
+Build-Jdk: 1.8.0_261
+Implementation-Title: stripe-payment-system
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.ithd.stripe
+Main-Class: ${start-class}
+

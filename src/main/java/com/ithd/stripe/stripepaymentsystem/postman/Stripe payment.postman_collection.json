@@ -1,0 +1,891 @@
+{
+	"info": {
+		"_postman_id": "6f43a853-6a42-4852-9d97-4b1535638d38",
+		"name": "Stripe payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Main page ",
+			"item": [
+				{
+					"name": "MainPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/products/findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"products",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"prod_HqPySaRiEi5DSl\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/products/findById",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"products",
+								"findById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"prod_HqQP999S8Z2aGJ\",\n    \"name\": \"new Product updated\",\n    \"active\": true,\n    \"attributes\": [],\n    \"description\": \"something new updated\",\n    \"images\": [\n        \"https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753\"\n    ],\n    \"metadata\": {\n        \"order_id\": \"6735\"\n    },\n    \"updated\": 1597565849\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/products/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"active\": true,\n  \"description\": \"something new \",\n  \"images\": [\n       \"https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60\"\n  ],\n  \"name\": \"Gold Special\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/products/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"prod_HqQO4DM8KSlQsN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/products/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"products",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Price",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"prod_HqPySaRiEi5DSl\",\n    \"price\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/price/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"price",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"price_1HHDxGFid7jPDiOCS6aCfYYw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/price/retrieve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"price",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/price//findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"price",
+								"",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Shant\",\n    \"lastName\": \"Khayalian\",\n    \"email\": \"skhayalian@gmail.com\",\n    \"phoneNumber\": \"+37498229898\",\n    \"address1\": \"Davtashen 3\",\n    \"address2\": null,\n    \"postalCode\": \"0015\",\n    \"city\": \"Yerevan\",\n    \"country\": \"Armenia\",\n    \"state\": \"arm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://second.fertifabenefits.com/stripe/stripe/v1/customer/create",
+							"protocol": "http",
+							"host": [
+								"second",
+								"fertifabenefits",
+								"com"
+							],
+							"path": [
+								"stripe",
+								"stripe",
+								"v1",
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : \"cus_HrVOSO6q3xkgRY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/customer/retrieve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"customer",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/customer/findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"customer",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : \"cus_Hs2lD4S15gYFjl\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/customer/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"customer",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"customerId\": \"cus_HsFUCoKqpmi1vK\",\n     \"number\": \"4242424242424242\",\n     \"month\": \"3\",\n     \"year\": \"2021\",\n     \"cvc\": \"333\",\n     \"firstName\": \"Shant\",\n     \"lastName\": \"Khayalian\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/card/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"card",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : \"cus_HrZwWsA6bRZgRM\",\n    \"cardId\": \"card_1HHrCzFid7jPDiOCDblCJMa3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/card/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"card",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"cus_HrzLxQsBOaPn2V\",\n    \"cardId\": \"card_1HIFNBFid7jPDiOCtpyKz1PB\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/card/retrieve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"card",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"cus_HrzLxQsBOaPn2V\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/card/findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"card",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : \"cus_HrxC7r6C9MegWP\",\n    \"price\" : 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/sub/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"sub",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\":\"sub_HrzL0hqXOMC44W\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/sub/retrieve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"sub",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\":\"sub_HrzL0hqXOMC44W\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/sub/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"sub",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/sub/findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"sub",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Automation",
+			"item": [
+				{
+					"name": "Subscription",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Shant\",\n    \"lastName\": \"Khayalian\",\n    \"email\": \"skhayalian@gmail.com\",\n    \"phoneNumber\": \"+37498229898\",\n    \"address1\": \"Davtashen 3\",\n    \"address2\": null,\n    \"postalCode\": \"0015\",\n    \"city\": \"Yerevan\",\n    \"country\": \"Armenia\",\n    \"state\": \"arm\",\n    \"number\": \"4242424242424242\",\n    \"month\": \"3\",\n    \"year\": \"2021\",\n    \"cvc\": \"333\",\n    \"price\": 12\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://second.fertifabenefits.com/stripe/stripe/v1/c/c/s/create",
+									"protocol": "http",
+									"host": [
+										"second",
+										"fertifabenefits",
+										"com"
+									],
+									"path": [
+										"stripe",
+										"stripe",
+										"v1",
+										"c",
+										"c",
+										"s",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "If there is a need to force new registered user to add card, and subscription and payn for it.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Coupon",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"percentageOff\": 25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/coupon/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"coupon",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"wSrIy8f5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/coupon/retrieve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"coupon",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/coupon/findAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"coupon",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"wSrIy8f5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stripe/v1/coupon/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stripe",
+								"v1",
+								"coupon",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Charge",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : \"cus_HsPG14hDv2pSTm\",\n    \"cardId\":\"card_1HIgnpFid7jPDiOCsjE5h4gZ\",\n    \"price\" : 123,\n    \"description\" :\"testing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://second.fertifabenefits.com/stripe/stripe/v1/charge/create",
+							"protocol": "http",
+							"host": [
+								"second",
+								"fertifabenefits",
+								"com"
+							],
+							"path": [
+								"stripe",
+								"stripe",
+								"v1",
+								"charge",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
